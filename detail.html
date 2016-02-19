@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>易卖二手车 – 二手车网上交易市场</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="易卖,易卖二手车,二手车,二手车网,二手车市场,二手车交易市场,二手车交易,二手车交易网">
+	<meta name="description" content="【易卖二手车】提供全国【优】质可【信】二手车源，15天包退、100%真实车源、100%无佣金，是国内领先的二手车交易平台。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/com.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/swiper.3.1.2.min.css">
+	<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="./js/touch.js"></script>
+	<script type="text/javascript" src="./js/fastclick.js"></script>
+	<script type="text/javascript" src="./js/comm.js"></script>
+	<script type="text/javascript" src="./js/alert.js"></script>
+    <style>
+    .swiper-container {
+        background:rgba(0,0,0,0.95);
+		height:13rem;
+    }
+    .swiper-container.zoom{
+		position: fixed;
+		top:0;right:0;bottom:0;left:0;
+    	height:auto;
+		z-index:10000;
+    }
+    .swiper-slide img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+    }
+    .swiper-slide img.zoom {
+		max-width:100%;
+    	max-height:100%;
+    }
+    #imgpage {
+		position:absolute;
+    	display:inline-block;
+    	text-align:center;
+    	bottom:1rem;right:1rem;
+    	background:rgba(0,0,0,0.5);
+    	padding:0 0.6rem;
+    	height:1.6rem;
+    	line-height:1.6rem;
+    	color:#fff;
+    	border-radius:0.8rem;
+    	z-index:1;
+    }
+    .foot {
+		position:fixed;
+    	bottom:0;left:0;right:0;
+    	z-index:9999;
+    	background-color:rgba(30,40,54,0.9);
+	    transition: ease-out 0.3s;
+		-moz-transition: ease-out 0.3s;
+		-webkit-transition: ease-out 0.3s;
+		-o-transition: ease-out 0.3s;
+    }
+    .foot.trans {
+		bottom:-3.6rem;
+    }
+    .foot .btn-full {
+    	color:#fff;
+    }
+    aside.left{
+		width:40%;
+    }
+    aside.right{
+		width:2.2rem;
+    	text-align:right;
+    }
+    .configur {
+		overflow:hidden;
+    	display:block;
+    }
+    .configur li {
+		display:block;
+    	width:33.33%;
+    	height:7rem;
+    	text-align:center;
+    	padding:1rem 0.6rem 0 0.6rem;
+    	float:left;
+    }
+    .configur li span {
+		display:block;
+    	line-height:1.2rem;
+    }
+    .configur li img {
+		width:4rem;
+    }
+    .addr {
+		position:absolute;
+    	left:2rem;right:2rem;
+    	bottom:2rem;
+    	padding:1rem;
+    	border-radius:0.6rem;
+    	background-color:rgba(255,255,255,0.95);
+    }
+    .toggle-more{
+		overflow:hidden;
+    	height:0;
+    }
+    .toggle-more.show{
+		height:auto;
+    }
+    </style>
+	</head>
+	<body>
+		<header class='trans'>
+			<div class="title">车辆详情</div>
+			<div class="left"><a href="javascript:void(0);" ontouchend="history.go(-1)" class="btn"><i class="iconfont icon-back"></i>返回</a></div>
+			<div class="right">
+				<a href="#" class="btn"><i class="iconfont icon-share"></i></a>
+				<a href="./index.html" class="btn"><i class="iconfont icon-home"></i></a>
+			</div>
+		</header>
+		<div style="margin-bottom:4.2rem;">
+		    <!-- Swiper -->
+		    <div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		                <img data-src="http://car1.autoimg.cn/upload/2014/11/19/u_2014111913510211426411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913510071126410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car1.autoimg.cn/upload/2014/11/19/u_2014111913505837026411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car1.autoimg.cn/upload/2014/11/19/u_2014111913505704526410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913505578026411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913504793326411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car1.autoimg.cn/upload/2014/11/19/u_2014111913503141326410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913502592026411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car1.autoimg.cn/upload/2014/11/19/u_2014111913501216026411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913500702726411.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913495854226410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913495216126410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		            <div class="swiper-slide">
+		                <img data-src="http://car0.autoimg.cn/upload/2014/11/19/u_2014111913494676426410.jpg" class="swiper-lazy">
+		                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		            </div>
+		        </div>
+		        <div id="imgpage">
+		        	<span id="active-num">0</span>/<span id="all-num">0</span>
+		        </div>
+		    </div>
+		    
+		    <div class="section cont">
+		    	<div class="dtable">
+			    	<aside style="width:3.8rem;">
+			    		<img src="./img/b_145.png" style="height:3rem;">
+			    	</aside>
+			    	<aside>
+			    		<p><b>长安马自达 CX-3 2016款 2.0L 自动 城市精英版</b>&nbsp;&nbsp;<span class="tips bg-default">诺</span>&nbsp;<span class="tips bg-dark">保</span></p>
+			    		<div class="dtable">
+			    			<aside class="clr-light fz-smaller">2016年&nbsp;&nbsp;&nbsp;216万公里</aside>
+			    			<aside class="clr-price fz-larger" align="right"><b>24.3万</b></aside>
+			    		</div>
+			    	</aside>
+		    	</div>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><i class="fa fa-car clr-default"></i> 车辆概况</h1>
+		    	<div class="cont b dtable"><aside class="left clr-normal">上牌日期</aside><aside>2016-09-08</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">行驶公里</aside><aside>2345600公里</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">过户次数</aside><aside>一次</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">保养情况</aside><aside>4S店正常保养</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">年检有效期</aside><aside>2018-09-23</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">使用性质</aside><aside>个人非营运</aside></div>
+		    	<div class="cont b dtable"><aside class="left clr-normal">生产厂商</aside><aside>长安马自达</aside></div>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><i class="fa fa-cogs clr-default"></i> 检测信息</h1>
+		    	<div style="text-align:center">
+		    		<br><b class="fz-larger">无重大事故车辆</b> <b class="fz-larger clr-default">15天包换</b>
+		    		<br><br><img src="./img/newman.png" width="50%"><br>
+		    	</div>
+		    	<div style="position:relative;">
+					<div class="cont dtable"><aside><i class="fa fa-check-circle clr-default"></i> 该车辆手续合法，无法律纠纷</aside><aside class="right"><a class="clr-default">详情</a></aside></div>
+					<div class="cont dtable"><aside><i class="fa fa-check-circle clr-default"></i> 车辆关键部件检测正常</aside><aside class="right"><a class="clr-default">详情</a></aside></div>
+					<div class="cont dtable"><aside><i class="fa fa-check-circle clr-default"></i> 发动机检测正常</aside><aside class="right"><a class="clr-default">详情</a></aside></div>
+					<div class="cont dtable"><aside><i class="fa fa-check-circle clr-default"></i> 无火烧事故</aside><aside class="right"><a class="clr-default">详情</a></aside></div>
+					<div class="cont b dtable"><aside><i class="fa fa-check-circle clr-default"></i> 无水浸事故</aside><aside class="right"><a class="clr-default">详情</a></aside></div>
+		    		<img src="./img/report-cert.png" style="width:10rem;position:absolute;left:50%;top:50%;margin:-5rem 0 0 -5rem;opacity:0.25" />
+		    	</div>
+		    	<div class="fz-smaller toggle-more" id="check-more">
+		    		<div class="cont b clr-normal text"><b>备注</b> 经过检测该车前保险杠可见伤，前保险杠喷漆，左后车门更换，漆面完好，无色差。个人一手车，按时保养，车身骨架无变形，车况良好。内饰干净、整洁，磨损程度正常。发动机、变速箱运行均无异常，动力系统无渗油现象。刹车系统、指示灯系统正常。</div>
+		    		<div class="cont dtable"><aside style="width:45%">检测师：胡文辉</aside><aside>级别：高级车辆检测师</aside></div>
+		    		<div class="cont b dtable"><aside style="width:45%">已检车辆：232辆</aside><aside>检测时间：2014-09-28</aside></div>
+		    	</div>
+		    	<a class="btn-more down" onclick="toggle_show($(this))" toggle-show-id="check-more">更多<i class="iconfont icon-unfold"></i></a>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><i class="fa fa-bars clr-default"></i> 车辆配置</h1>
+		    	<div class="cont m b p">
+					<ul class="configur">
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_220.png">
+							<span class="clr-normal fz-mini">车身稳定控制(ESC/ESP等)</span>
+						</li>
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_88.png">
+							<span class="clr-normal fz-mini">多功能方向盘</span>
+						</li>
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_86.png">
+							<span class="clr-normal fz-mini">真皮方向盘</span>
+						</li>
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_75.png">
+							<span class="clr-normal fz-mini">牵引力控制(ASR/TCS等)</span>
+						</li>
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_111.png">
+							<span class="clr-normal fz-mini">蓝牙/车载电话</span>
+						</li>
+						<li>
+							<img src="http://imgs.xin.com/xin/images/car-config-120/xin/cp_165.png">
+							<span class="clr-normal fz-mini">前/后排侧气囊</span>
+						</li>
+					</ul>
+				</div>
+				<a href="http://m.xin.com/c/config_147532.html" class="cont p btn-more down">
+					全部配置信息<i class="iconfont icon-right"></i>
+				</a>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><i class="fa fa-building clr-default"></i> 车铺信息</h1>
+		    	<div class="cont b">
+		    		<aside style="width:3.8rem;">
+			    		<img src="./img/shop-pic1.jpg" style="height:3rem;width:3rem;border-radius:1.5rem;">
+			    	</aside>
+		    		<aside class="text">
+		    			<p><b>深圳市马自达泰林二手车行</b></p>
+		    			<span class="clr-light fz-smaller">在售234辆&nbsp;&nbsp;场外独立展厅</span>
+		    		</aside>
+		    	</div>
+		    	<a href="./shop.html" class="cont p b btn-more down">
+					进入车铺<i class="iconfont icon-right"></i>
+				</a>
+		    	<div class="cont m" style="position:relative">
+		    		<img src="./img/shoplocation.png" width="100%" />
+		    		<a href="http://api.map.baidu.com/geocoder?address=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%AE%9D%E6%B0%91%E4%B8%80%E8%B7%AF%E4%B8%80%E5%B7%B7%E4%B8%80%E5%8F%B7%E5%8F%B3%E4%BE%A7&amp;output=html&amp;src=xin" class="addr text" target="_blank"><i class="iconfont icon-locationfill clr-default"></i> 看车地址： 广东省深圳市宝安区宝民一路一巷一号右侧<i class="iconfont icon-right clr-default"></i></a>
+		    	</div>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><i class="fa fa-car clr-default"></i> 同类车辆</h1>
+				<div id="list" class='list'></div>
+		    </div>
+		    
+		</div>
+		<div class="foot trans dtable">
+			<aside style="width:8rem"><a class="btn-full fz-larger" id="collect"><i class="fa fa-star-o"></i> 收藏</a></aside>
+			<aside><a href="tel://13590133340" class="btn-full fz-larger bg-default"><i class="fa fa-phone"></i> 立即咨询</a></aside>
+		</div>
+	</body>
+	
+	 <script>
+	    var mySwiper = new Swiper('.swiper-container', {
+	        // Disable preloading of all images
+	        preloadImages: false,
+	        loop: false,
+	        spaceBetween: 30,
+	        // Enable lazy loading
+	        lazyLoading: true,
+	        onInit: function(swiper){
+	 	       $("#active-num").html(swiper.activeIndex+1);
+	 	       $("#all-num").html(swiper.slides.length);
+	 	    },
+	 	 	onSlideChangeEnd: function(swiper){
+	 	 		$("#active-num").html(swiper.activeIndex+1);
+	 	    }
+	    });
+	    function toggle_show(obj)
+	    {
+	    	var box = $("#"+obj.attr('toggle-show-id'));
+	    	box.toggleClass('show');
+	    	if(!box.hasClass('show'))
+	    		obj.html('更多<i class="iconfont icon-unfold"></i>');
+	    	else
+	    		obj.html('收起<i class="iconfont icon-fold"></i>');
+	    }
+	    $(function(){
+	    	$('.swiper-container').bind('click',function(){
+    			$(this).toggleClass('zoom').find('img').toggleClass('zoom');
+	    		if($(this).hasClass('zoom'))
+	    		{
+	    			$('body').bind('touchmove', function (e){
+	    				e.preventDefault();
+	    			}, false);
+	    		}
+	    		else
+	    			$("body").unbind("touchmove");
+	    	});
+	    	$(window).scroll(function(){
+	    		if($(window).scrollTop()>$('.swiper-container:first').height()-$('header:first').height())
+	    		{
+	    			$('header').removeClass('trans');
+	    			$('.foot').removeClass('trans');
+	    		}
+	    		else
+	    		{
+	    			$('header').addClass('trans');
+	    			$('.foot').addClass('trans');
+	    		}
+	    	});
+    		$.get('./morelist.html',{},function(html){
+    			$('#list').append(html).initTool();
+    		},'html');
+    		$('#collect').bind('click',function(){
+    			var star = $(this);
+    			if(star.find('>i').hasClass('fa-star-o')){
+    				alertMsg.confirm('哈哈,你真的要收藏吗？屌丝？',{okName:'收藏',okCall:function(){
+    					alertMsg.info('谢谢您的大恩大德我们竭诚为您提供更好的服务',{'type':'correct','autoclose':true});	
+    					star.html('<i class="fa fa-star clr-orange"></i> 取消');
+    				}});	
+    			}
+    			else{
+    				alertMsg.confirm('你真的忍心取笑收藏吗？屌丝？',{okName:'取消收藏',okCall:function(){
+    					alertMsg.info('滚犊子，不收藏拉到！点我关闭',{'type':'error','autoclose':false});	
+    					star.html('<i class="fa fa-star-o"></i> 收藏');
+    				}});
+    			}
+    		});
+
+	    });
+	  </script>
+    
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>易卖二手车 – 二手车网上交易市场</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="易卖,易卖二手车,二手车,二手车网,二手车市场,二手车交易市场,二手车交易,二手车交易网">
+	<meta name="description" content="【易卖二手车】提供全国【优】质可【信】二手车源，15天包退、100%真实车源、100%无佣金，是国内领先的二手车交易平台。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/com.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+	<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/touch.js"></script>
+	<script type="text/javascript" src="./js/fastclick.js"></script>
+	<script type="text/javascript" src="./js/comm.js"></script>
+	<script type="text/javascript" src="./js/alert.js"></script>
+	<style>
+		#shop-bg {
+			background-image:url(./img/shop-bg.jpg);
+			background-repeat:no-repeat;
+			background-position:center center;
+			background-size:cover;
+		}
+		#shop-bg aside {
+			background-color:rgba(14,87,200,0.8);
+			color:#fff;
+		}
+		#shop-bg .shop-pic {
+			width:5.4rem;
+		}
+		#shop-bg img {
+			width:4.4rem;height:4.4rem;
+			border-radius:2.2rem;
+		}
+	</style>
+	</head>
+	<body>
+		<header>
+			<div class="title">车铺信息</div>
+			<div class="left"><a href="javascript:void(0);" ontouchend="history.go(-1)" class="btn"><i class="iconfont icon-back"></i>返回</a></div>
+			<div class="right">
+				<a href="#" class="btn"><i class="iconfont icon-share"></i></a>
+				<a href="./index.html" class="btn"><i class="iconfont icon-home"></i></a>
+			</div>
+		</header>
+		<div id="content">
+		    <div class="section t">
+		    	<div class="dtable" id="shop-bg">
+		    		<aside style="width:1rem;height:8rem;"></aside>
+		    		<aside class="shop-pic">
+			    		<img src="./img/shop-pic1.jpg">
+			    	</aside>
+		    		<aside class="text">
+		    			<p><b>深圳市马自达泰林二手车行</b></p>
+		    			<span class="fz-mini"><i class="fa fa-phone"></i> 400-401-45677&nbsp;&nbsp;场外独立展厅</span>
+		    			<br><span class="fz-mini clr-orange"><i class="fa fa-star"></i>&nbsp;<i class="fa fa-star"></i>&nbsp;<i class="fa fa-star"></i>&nbsp;<i class="fa fa-star"></i>&nbsp;<i class="fa fa-star-o"></i></span>
+		    		</aside>
+		    		<aside style="width:1rem;"></aside>
+		    	</div>
+		    	<a class="cont b dtable tap" href="http://api.map.baidu.com/geocoder?address=%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%AE%9D%E5%AE%89%E5%8C%BA%E5%AE%9D%E6%B0%91%E4%B8%80%E8%B7%AF%E4%B8%80%E5%B7%B7%E4%B8%80%E5%8F%B7%E5%8F%B3%E4%BE%A7&amp;output=html&amp;src=xin" class="clr-default" target="_blank">
+		    		<aside class="fz-smaller clr-normal text"><i class="iconfont icon-locationfill"></i> 广东省深圳市宝安区宝民一路一巷一号右侧一路一巷一号右侧</aside>
+		    		<aside align="right" class="clr-default" style="min-width:3.8rem;">查看<i class="iconfont icon-right"></i></aside>
+		    	</a>
+		    	<div class="dtable">
+					<aside style="width:50%" class="b"><a href="javascript:;" id="collect" class="btn-default clr-price"><i class="fa fa-star-o"></i> 收藏车铺</a></aside>
+					<aside><a href="tel://13590133340" class="btn-default clr-default"><i class="fa fa-phone"></i> 立即咨询</a></aside>
+				</div>
+		    </div>
+		    
+		    <div class="section">
+		    	<h1 class="title"><div class="dtable"><aside><i class="fa fa-car clr-default"></i> 在售车辆</aside><aside class="" align="right"><b>56</b>辆</aside></div></h1>
+		    	<div id="list" class="list"></div>
+		    </div>
+		    <a href="javascript:void(1);" id="loadmore" class="btn-loadmore">加载更多<i class="iconfont icon-unfold"></i></a>
+		    
+		</div>
+	</body>
+	
+<script>
+function getlist(){
+	$.get('./morelist.html',{},function(html){
+		$('#list').append(html).initTool();
+	},'html');
+}
+	
+$(function(){
+	getlist();
+	$('#loadmore').click(function(){
+		getlist();
+	});
+	$('#collect').bind('click',function(){
+		var star = $(this);
+		if(star.find('>i').hasClass('fa-star-o')){
+			alertMsg.confirm('哈哈,你真的要收藏吗？屌丝？',{okName:'收藏',okCall:function(){
+				alertMsg.info('谢谢您的大恩大德我们竭诚为您提供更好的服务',{'type':'correct','autoclose':true});	
+				star.html('<i class="fa fa-star"></i> 取消收藏');
+			}});	
+		}
+		else{
+			alertMsg.confirm('你真的忍心取笑收藏吗？屌丝？',{okName:'取消收藏',okCall:function(){
+				alertMsg.info('滚犊子，不收藏拉到！点我关闭',{'type':'error','autoclose':false});	
+				star.html('<i class="fa fa-star-o"></i> 收藏车铺');
+			}});
+		}
+	});
+});
+</script>
+    
+</html>

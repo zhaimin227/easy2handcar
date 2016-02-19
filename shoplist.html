@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>易卖二手车 – 二手车网上交易市场</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="易卖,易卖二手车,二手车,二手车网,二手车市场,二手车交易市场,二手车交易,二手车交易网">
+	<meta name="description" content="【易卖二手车】提供全国【优】质可【信】二手车源，15天包退、100%真实车源、100%无佣金，是国内领先的二手车交易平台。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="./css/base.css?20150902">
+	<link rel="stylesheet" href="./css/com.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+	<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/touch.js"></script>
+	<script type="text/javascript" src="./js/fastclick.js"></script>
+	<script type="text/javascript" src="./js/comm.js"></script>
+	<style>
+		#search-head {
+			top:-2.8rem;
+			z-index:10002;
+			transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			-webkit-transition: all 0.5s;
+			-o-transition: all 0.5s;
+		}
+		#search-head.show {
+			top:0;
+		}
+	</style>
+	</head>
+	<body>
+		<header>
+			<div class="title">车铺列表</div>
+			<div class="left"><a href="javascript:void(0);" ontouchend="history.go(-1)" class="btn"><i class="iconfont icon-back"></i>返回</a></div>
+			<div class="right">
+				<a href="./index.html" class="btn"><i class="iconfont icon-home"></i></a>
+			</div>
+		</header>
+		<div id="content">
+			<div class="cont m dtable">
+				<aside style="position:relative;">
+		    		<form id="search-form" action="./shoplist.html" method="get">
+		    			<input id="keyword" type="text" name="w" placeholder="输入车铺名称搜索" autocomplete="off" value="" onfocus="input_zomm(this)">
+		    		</form>
+		    		<i class='fa fa-search clr-light fz-smaller' style="position:absolute;top:0.25rem;right:0.7rem;line-height:1.6rem;"></i>
+	    		</aside>
+	    	</div>
+			<div class="section">
+				<div class="cont b n dtable">
+					<aside class="b"><a href="#" class="btn-mini clr-normal">售出 <i class="fa fa-sort"></i></a></aside>
+					<aside class="b"><a href="#" class="btn-mini clr-normal">好评 <i class="fa fa-sort"></i></a></aside>
+					<aside><a href="#" class="btn-mini clr-normal">车辆 <i class="fa fa-sort"></i></a></aside>
+				</div>
+				<div id="list" class="list"></div>
+		    </div>
+		    <a href="javascript:void(1);" id="loadmore" class="btn-loadmore">加载更多<i class="iconfont icon-unfold"></i></a>
+		    <div class="cont dtable fz-smaller clr-light"><aside align="center">小易为您找到2380个车铺</aside></div>
+		</div>
+	</body>
+<script>
+function input_zomm(ths){
+	$(document.body).append('<div class="model-bg" id="input-model-bg"></div>').find('#input-model-bg').css('top',$('header:first').height()+$('#content>div').outerHeight()).fadeIn(0,function(){
+		$('body').bind('touchmove', stop_scroll);
+	}).bind('click',function(){
+		$('input:first').blur();
+		$(this).fadeOut(300,function(){
+			$(this).remove();
+			$('body').unbind('touchmove');
+		});
+	});
+}
+function getlist(){
+	$.get('./shoplist_d.html',{},function(html){
+		$('#list').append(html).initTool();
+	},'html');
+}
+	
+$(function(){
+	getlist();getlist();
+	$('#loadmore').click(function(){
+		getlist();
+	});
+});
+</script>
+</html>

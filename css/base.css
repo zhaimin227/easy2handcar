@@ -1,0 +1,49 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,aside,blockquote,th,td,span,i,b{margin:0;padding:0;}
+/**{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);清除按钮蒙版}*/
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+html{width:100%;margin:0 auto;font-size:16px;font-family:Helvetica,Arial,"Microsoft YaHei","黑体";}
+body{min-width:320px; font-family:Helvetica,Arial,"Microsoft YaHei","黑体";-webkit-text-size-adjust:100%;text-size-adjust:100%;/* background:#f3f3f3*/}
+@media screen and ( min-width: 360px ) and ( max-width:419px ){
+	html{font-size:16px;}
+}
+@media screen and ( min-width: 420px ) and ( max-width:479px ){
+	html{font-size:18px;}
+}
+@media screen and ( min-width: 480px) and (max-width: 539px ){
+	html{font-size:20px;}
+}
+@media screen and ( min-width: 540px) and (max-width: 639px ){
+	html{font-size:22px;}
+}
+@media screen and ( min-width:640px ){
+	html{font-size:24px;}
+}
+
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:100%;}
+:focus {outline:0;}
+a,input,select,textarea{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+q:before,q:after{content:''}
+em,i{font-style:normal;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:none; }
+ol,ul,li{list-style:none; vertical-align:middle;}
+input,textarea{font-family:Helvetica,Arial,"Microsoft YaHei"; outline:none; -webkit-appearance: none;}
+textarea{resize:none;}
+textarea::-webkit-input-placeholder,
+textarea::-moz-input-placeholder,
+textarea::-ms-input-placeholder,
+input::-webkit-input-placeholder,
+input::-moz-input-placeholder;
+input::-ms-input-placeholder{color:#bababa;}
+input:focus{outline-width:0;box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;-ms-box-shadow:none;box-shadow:none}
+a{text-decoration:none; outline:none; font-weight:normal; border:0; /*blr:expression(this.onFocus=this.blur());*/}
+.clearfix:after{content:'';display:block;clear:both}
+.fl{float:left;}
+.fr{float:right;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+.tl{text-align:left;}
+.vm{vertical-align:middle;}
+.rel{position:relative;}
+.abs{position:absolute;}
+.f3{background:#f3f3f3 !important}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>易卖二手车 – 二手车网上交易市场</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="易卖,易卖二手车,二手车,二手车网,二手车市场,二手车交易市场,二手车交易,二手车交易网">
+	<meta name="description" content="【易卖二手车】提供全国【优】质可【信】二手车源，15天包退、100%真实车源、100%无佣金，是国内领先的二手车交易平台。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/com.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+	<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/touch.js"></script>
+	<script type="text/javascript" src="./js/fastclick.js"></script>
+	<script type="text/javascript" src="./js/comm.js"></script>
+	</head>
+	<style>
+	.btn-loadmore.mimi {
+		position:relative;
+	}
+	.btn-loadmore.mimi:after {
+		content: "";
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		border-bottom: 0.7rem solid #0e57c8;
+		border-left: 0.7rem solid transparent;
+		bottom: 0;
+		right: 0;
+		display: block;
+	}
+	</style>
+	<body>
+		<header>
+			<div class="title">车辆搜索</div>
+			<div class="left"><a href="javascript:void(0);" ontouchend="history.go(-1)" class="btn"><i class="iconfont icon-back"></i>返回</a></div>
+			<div class="right"><a href="./filter.html" class="btn"><i class="iconfont icon-filter"></i>高级</a></div>
+		</header>
+		<div id="content">
+			<div class="cont m dtable">
+				<aside style="position:relative;">
+		    		<form id="search-form" action="./search.html" method="get">
+		    			<input id="keyword" type="text" name="w" placeholder="输入车型/品牌搜索" autocomplete="off" value="" onfocus="input_zomm(this)">
+		    		</form>
+		    		<i class='fa fa-search clr-light fz-smaller' style="position:absolute;top:0.25rem;right:0.7rem;line-height:1.6rem;"></i>
+	    		</aside>
+	    	</div>
+	    	<div class="section m b" style="padding:0.4rem">
+	    		<div class="dtable">
+	    			<aside style="width:33.33%"><a class="btn-loadmore mimi" id="cond-price">价格</a></aside>
+	    			<aside style="width:33.33%"><a class="btn-loadmore mimi" id="cond-year">车龄</a></aside>
+	    			<aside><a class="btn-loadmore mimi" id="cond-country">国别</a></aside>
+	    		</div>
+	    		<div class="dtable">
+	    			<aside style="width:33.33%"><a class="btn-loadmore mimi" id="cond-class">级别</a></aside>
+	    			<aside style="width:33.33%"><a class="btn-loadmore mimi" id="cond-speed">变速箱</a></aside>
+	    			<aside><a class="btn-loadmore mimi" id="cond-discharge">排量</a></aside>
+	    		</div>
+	    	</div>
+	    	<div class="section t">
+	    		<div class="dtable">
+	    			<aside style="width:33.33%" align="center"><a class="btn-mini" href="./search.html"><i class="fa fa-times-circle"></i> 清空条件</a></aside>
+	    			<aside><a href="./search.html" class="btn-mini bg-default">搜索</a></aside>
+	    		</div>
+	    	</div>
+	    	
+			<div class="section">
+				<div class="cont b n dtable">
+					<aside class="b"><a href="javascript:void(0);" class="btn-mini clr-normal">发布 <i class="fa fa-sort"></i></a></aside>
+					<aside class="b"><a href="javascript:void(0);" class="btn-mini clr-normal">价格 <i class="fa fa-sort"></i></a></aside>
+					<aside class="b"><a href="javascript:void(0);" class="btn-mini clr-normal">车龄 <i class="fa fa-sort"></i></a></aside>
+					<aside><a href="javascript:void(0);" class="btn-mini clr-normal">里程 <i class="fa fa-sort"></i></a></aside>
+				</div>
+				<div id="list" class="list"></div>
+		    </div>
+		    <a href="javascript:void(1);" id="loadmore" class="btn-loadmore">加载更多<i class="iconfont icon-unfold"></i></a>
+		    <div class="cont dtable fz-smaller clr-light"><aside align="center">小易为您找到23456辆车</aside></div>
+		</div>
+		<div class="model-bg">
+			<div id="filter_d"></div>
+			<style>
+			.btn-default.hover, .btn-default.current.hover, .btn-loadmore.mimi.hover {
+				background-color:#0e57c8;
+				color:#fff;
+			}
+			.btn-default.current {
+				background-color:#f0f0f0;
+				color:#3c3c3c;
+			}
+			</style>
+		</div>
+	</body>
+<script>
+function getlist(){
+	$.get('./morelist.html',{},function(html){
+		$('#list').append(html).initTool();
+	},'html');
+}
+function input_zomm(ths){
+	$(document.body).append('<div class="model-bg" id="input-model-bg"></div>').find('#input-model-bg').css('top',$('header:first').height()+$('#content>div').outerHeight()).fadeIn(0,function(){
+		$('body').bind('touchmove', stop_scroll);
+	}).bind('click',function(){
+		$('input:first').blur();
+		$(this).fadeOut(300,function(){
+			$(this).remove();
+			$('body').unbind('touchmove');
+		});
+	});
+}
+function cond_page_open()
+{
+	var obj = $(event.currentTarget);
+	$('.model-bg').find('li[src-id='+obj.attr('id')+']').show().siblings().hide();
+	$('.model-bg').fadeIn(100,function(){
+		$('.model-bg .cond_page').removeClass('hide');
+	});
+	$('body').bind('touchmove', stop_scroll);
+}
+function chose_back()
+{
+	var src = $(event.currentTarget).closest('li');
+	var obj = $(event.currentTarget);
+	var text = obj.html()=='不限'? src.attr('src-text') : obj.html();
+	text = src.attr('src-id')=='cond_class'? obj.find('em:first').html() : text;
+	$('#'+src.attr('src-id')).html(text);
+	modelBg_hide();
+}
+function modelBg_hide()
+{
+	$('.model-bg .cond_page').addClass('hide');
+	$('.model-bg').fadeOut(400);
+	$('body').unbind('touchmove');
+	event.stopPropagation();
+}
+$(function(){
+	getlist();
+	getlist();
+	$('#loadmore').click(function(){
+		getlist();
+	});
+	$('.btn-loadmore.mimi').bind('click',cond_page_open);
+	$.get('./filter_d.html',{},function(html){
+		var $p = $('#filter_d');
+		$p.html(html);
+		$('.btn-default',$p).bind('click',chose_back);
+		$p.initTool();
+	},'html');
+	
+	$('.model-bg').bind('click',function(){
+		modelBg_hide();
+	});
+	$('#filter_d').bind('click',function(){
+		event.stopPropagation();
+	});
+});
+</script>
+</html>

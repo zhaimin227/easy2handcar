@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>易卖二手车 – 二手车网上交易市场</title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="易卖,易卖二手车,二手车,二手车网,二手车市场,二手车交易市场,二手车交易,二手车交易网">
+	<meta name="description" content="【易卖二手车】提供全国【优】质可【信】二手车源，15天包退、100%真实车源、100%无佣金，是国内领先的二手车交易平台。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="stylesheet" href="./css/base.css?20150902">
+	<link rel="stylesheet" href="./css/com.css">
+	<link rel="stylesheet" href="./css/iconfont.css">
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/swiper.3.1.2.min.css">
+	<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="./js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="./js/touch.js"></script>
+	<script type="text/javascript" src="./js/fastclick.js"></script>
+	<script type="text/javascript" src="./js/comm.js"></script>
+	<style>
+		#index-bg {
+			color:#fff;
+			background-color:rgba(30,40,54,0.93);
+			position:absolute;
+			top:0;right:0;
+			width:100%;
+			height:100%;
+			text-align:center;
+			z-index:10;
+			overflow:visible;	
+		}
+		#no-scroll {
+			text-align:center;
+			margin:0.8rem 0 0 0;
+		}
+		#no-scroll ul {
+			display:inline-block;
+			overflow:hidden;
+		}
+		#no-scroll li {
+			position: relative;
+			overflow: hidden;
+			display: block;
+			float: left;
+			width: 2.4rem;
+			height: 4rem;
+		}
+		#no-scroll li a {
+			position:absolute;
+			display:block;
+			width:2.4rem;
+			padding:0;margin:0;
+			left:0;
+			top:0;
+		}
+		#no-scroll li a em {
+			display:block;
+			padding:0;margin:0;
+			line-height:100%;
+			color:#fff;
+			width:2.4rem;
+			height:4rem;
+			font-size:4rem;
+			text-align:center;
+			font-family:Helvetica;
+		}
+		#index-bg span {
+			color:rgba(255,255,255,0.5);
+		}
+		#index-bg a#gosearch {
+			position:absolute;
+			bottom:-1.6rem;
+			left:50%;
+			margin-left:-5rem;
+			display:inline-block;
+			width:10rem;
+			height:3.2rem;
+			line-height:3.2rem;
+			font-size:1.3rem;
+			padding:0;
+			border-radius:1.6rem;
+			color:#fff;
+			background: #0e57c8;
+			box-shadow: 0 0 1rem rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255,0.15) inset;
+			transition: ease-out .1s;
+		}
+		#index-bg a#gosearch.hover {
+			box-shadow:none;
+			background:#1a67dd;
+			-ms-transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+		.swiper-pagination-bullet{
+			background:#fff;
+		}
+		#navblock a {
+			display:block;
+			width:25%;
+			float:left;
+			padding:2.6rem 0 2rem 0;
+			text-align:center;
+			border-right:1px solid #f0f0f0;
+		}
+		#navblock a.last {
+			border-right-width:0;
+		}
+		#navblock a span{
+			display:inline-block;
+			width:3rem;
+			height:3rem;
+			border-radius:1.5rem;
+			text-align:center;
+			line-height:3rem;
+			font-size:1.5rem;
+		}
+		#navblock a em {
+			display:block;
+			margin-top:0.6rem;
+		}
+		#rec-car-list {
+			padding:0.6rem;
+		}
+		#rec-car-list li{
+			display:block;
+			float:left;
+			width:50%;
+			padding-right:0.25rem;
+			margin-bottom:0.6rem;
+		}
+		#rec-car-list li.double {
+			padding-left:0.25rem;
+			padding-right:0
+		}
+		#rec-car-list li a {
+			display:block;
+			position:relative;
+		}
+		#rec-car-list li a img {
+			display:block;
+		}
+		#rec-car-list li a span {
+			display:block;
+			position:absolute;
+			bottom:0;right:0;left:0;
+			line-height:0.9rem;
+			font-size:0.7rem;
+			padding:0.2rem;
+			vertical-align:center;
+			background:rgba(0,0,0,0.4);
+			color:#fff;
+		}
+		#rec-car-list li .bg-price {
+			font-size:1rem;
+			display: inline-block;
+			padding: 0 0.2rem 0 0.6rem;
+			position: absolute;
+			right: 0;
+			top: 0;
+			line-height:1.3rem;
+			border-radius:0 0 0 1rem;
+		}
+		#rec-brand a {
+			display:table-cell;
+			float:left;
+			width:25%;
+			text-align:center;
+			padding:1rem 0;
+		}
+		#rec-brand a img {
+			width:2rem;
+			height:2rem;
+		}
+		#rec-brand span {
+			display:block;
+			color:#5a5a5a;
+		}
+	</style>
+	</head>
+	<body>
+		<header class='trans'>
+			<div id="logo"><img src="./img/logo.png" /></div>
+			<div id="search"><a href="./search.html" class='fz-smaller'>输入品牌/车系搜索车辆<i class="iconfont icon-search clr-default"></i></a></div>
+		</header>
+		<div>
+			
+			<div style="position:relative">
+				<img src="./img/index-bg.jpg" width="100%" />
+				<div id="index-bg">
+					<div class="dtable" style="height:100%;">
+						<aside style="vertical-align:middle" align="center">
+							<div id="no-scroll">
+								<ul>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+									<li>
+										<a><em>0</em><em>1</em><em>2</em><em>3</em><em>4</em><em>5</em><em>6</em><em>7</em><em>8</em><em>9</em></a>
+									</li>
+								</ul>
+							</div>
+							<span class="fz-mini">辆车供您选择</span>
+						</aside>
+					</div>
+					<a href="./search.html" id="gosearch"><i class="iconfont icon-search"></i> 即刻搜索</a>
+				</div>
+			</div>
+			<div class="cont fff n" id="navblock">
+				<a href="./search.html" class="tap"><span class="bg-blue"><i class="iconfont icon-search"></i></span><em class="fz-smaller">搜索</em></a>
+				<a href="./search.html" class="tap"><span class="bg-light"><i class="iconfont icon-taxi"></i></span><em class="fz-smaller">卖车</em></a>
+				<a href="./shoplist.html" class="tap"><span class="bg-orange"><i class="iconfont icon-taoxiaopu"></i></span><em class="fz-smaller">车铺</em></a>
+				<a href="./my.html" class="last tap"><span class=" bg-price"><i class="iconfont icon-peoplefill"></i></span><em class="fz-smaller">个人中心</em></a>
+			</div>
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide"><img src="./img/s2.jpg" width="100%" /></div>
+			        <div class="swiper-slide"><img src="./img/s1.jpg" width="100%" /></div>
+			        <div class="swiper-slide"><img src="./img/s3.jpg" width="100%" /></div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			</div>
+			
+			<div class="section">
+				<h2 class="title"><i class="fa fa-caret-left"></i> <b>推荐品牌</b> <i class="fa fa-caret-right"></i></h2>
+				<div id="rec-brand">
+                	<a href="./search.html" class="tap">
+           				<img src="./img/b_84.png">
+           				<span class="fz-smaller">大众</span>
+		         	</a>
+		            <a href="./search.html" class="tap">
+		            	<img src="./img/b_89.png">
+		            	<span class="fz-smaller">丰田</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_62.png">
+			            <span class="fz-smaller">奥迪</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_15.png">
+			            <span class="fz-smaller">日产</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_59.png">
+			            <span class="fz-smaller">本田</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_98.png">
+			            <span class="fz-smaller">福特</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_94.png">
+			            <span class="fz-smaller">铃木</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_145.png">
+			            <span class="fz-smaller">马自达</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_129.png">
+			            <span class="fz-smaller">起亚</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_38.png">
+			            <span class="fz-smaller">宝马</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_47.png">
+			            <span class="fz-smaller">奔驰</span>
+			         </a>
+			         <a href="./search.html" class="tap">
+			            <img src="./img/b_55.png">
+			            <span class="fz-smaller">现代</span>
+			         </a>
+              		</div>
+			</div>
+			<div class="section">
+				<h2 class="title"><i class="fa fa-caret-left"></i> <b>推荐好车</b> <i class="fa fa-caret-right"></i></h2>
+				<ul id="rec-car-list">
+					<li>
+						<a href="./detail.html">
+							<img src="./car/55d298ca83988662162_18.jpg" width="100%" />
+							<span>大众 POLO两厢 2014款 1.6L 自动 舒适版</span>
+							<div class="bg-price"><b>12.5万</b></div>
+						</a>
+					</li>
+					<li class="double">
+						<a href="./detail.html">
+							<img src="./car/55e2a468c65cd148595_18.jpg" width="100%" />
+							<span>宝马 1系两厢 2013款 2.0L 自动 豪华版</span>
+							<div class="bg-price"><b>33.4万</b></div>
+						</a>
+					</li>
+					<li>
+						<a href="./detail.html">
+							<img src="./car/55e297bfb26ab116825_18.jpg" width="100%" />
+							<span>本田 雅阁 2012款 2.0L 手动 天窗导航版</span>
+							<div class="bg-price"><b>21.8万</b></div>
+						</a>
+					</li>
+					<li class="double">
+						<a href="./detail.html">
+							<img src="./car/55b6e2ffba0fc503724_18.jpg" width="100%" />
+							<span>吉普 大切诺基 2011款 3.6L 自动 豪华版</span>
+							<div class="bg-price"><b>56.6万</b></div>
+						</a>
+					</li>
+					<li>
+						<a href="./detail.html">
+							<img src="./car/55d298ca83988662162_18.jpg" width="100%" />
+							<span>大众 POLO两厢 2014款 1.6L 自动 舒适版</span>
+							<div class="bg-price"><b>12.5万</b></div>
+						</a>
+					</li>
+					<li class="double">
+						<a href="./detail.html">
+							<img src="./car/55e2a468c65cd148595_18.jpg" width="100%" />
+							<span>宝马 1系两厢 2013款 2.0L 自动 豪华版</span>
+							<div class="bg-price"><b>33.4万</b></div>
+						</a>
+					</li>
+					<li>
+						<a href="./detail.html">
+							<img src="./car/55e297bfb26ab116825_18.jpg" width="100%" />
+							<span>本田 雅阁 2012款 2.0L 手动 天窗导航版</span>
+							<div class="bg-price"><b>21.8万</b></div>
+						</a>
+					</li>
+					<li class="double">
+						<a href="./detail.html">
+							<img src="./car/55b6e2ffba0fc503724_18.jpg" width="100%" />
+							<span>吉普 大切诺基 2011款 3.6L 自动 豪华版</span>
+							<div class="bg-price"><b>56.6万</b></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 
+		<footer>
+			<a id="home" class="current" href="./index.html"><i class="fa fa-home"></i><br>首页</a>
+			<a id="search" href="./search.html"><i class="fa fa-search"></i><br>搜索</a>
+			<a id="merchant" href="./merchant.html"><i class="fa fa-car"></i><br>车铺</a>
+			<a id="my" href="./my.html"><i class="fa fa-user"></i><br>我的</a>
+		</footer>
+		 -->
+	</body>
+
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 2500,
+        'loop': true
+    });
+    $(window).scroll(function(){
+		if($(window).scrollTop()>$('#index-bg').height()-$('header:first').height())
+			$('header').removeClass('trans');
+		else
+			$('header').addClass('trans');
+	});
+    var sum = 253069;
+    scrollNo();
+    setInterval(function(){
+    	sum = Number(sum)+Number(1236);
+    	if(sum<999999)
+    		scrollNo();
+    },3000);
+    function scrollNo()
+    {
+        function no_scroll(obj,cu,no,time){
+        	if(cu!=no)
+       		{
+        		var a = obj.find('a:first');
+    	    	a.stop().animate({'top':'-4rem'},time,function(){
+    	    		a.css('top',0).children(':first').appendTo(a);
+    	    		if(a.children(':first').html()!=no)
+    	    			no_scroll(obj,cu,no,time)
+    	    		else
+    	    			return;
+    	    	});
+       		}
+        }
+        $('#no-scroll ul li').each(function(index){
+        	var no = Number(String(sum).substr(index,1));
+        	cu = Number($(this).find('a:first').children(':first').html());
+        	var time = 1000/(cu>no? no+10-cu:no-cu);
+        	no_scroll($(this),cu,no,time);
+        });	
+    }
+    </script>
+
+</html>
